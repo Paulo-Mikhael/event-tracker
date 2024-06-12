@@ -1,8 +1,8 @@
 import { useRecoilValue } from "recoil";
-import { listaDeEventosState } from "../atom";
+import { filtraEventos } from "../seletores";
 
 const useListaDeEventos = () => {
-  const setListaEventos = useRecoilValue(listaDeEventosState);
+  const setListaEventos = useRecoilValue(filtraEventos);
 
   return setListaEventos;
 }
