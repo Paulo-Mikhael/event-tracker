@@ -17,6 +17,13 @@ export const listaDeEventosState = atom<IEvento[]>({
       "fim": new Date("2022-01-16T11:00"),
       "completo": false,
       "id": 1642342959
+    },
+    {
+      "descricao": "Estudar Angular",
+      "inicio": new Date("2024-06-13T09:00"),
+      "fim": new Date("2024-06-13T11:00"),
+      "completo": false,
+      "id": 1642342923
     }
   ]
 });
