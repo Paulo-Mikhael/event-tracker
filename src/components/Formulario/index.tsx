@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './Formulario.module.scss';
 import { obterId } from '../../util';
-import useAdicionarEvento from '../../hooks/useAdicionarEvento';
+import useAdicionarEvento from '../../state/hooks/useAdicionarEvento';
 
 const Formulario: React.FC = () => {
   const [descricao, setDescricao] = useState('')

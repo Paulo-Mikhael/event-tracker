@@ -3,7 +3,7 @@ import style from './Calendario.module.scss';
 import ptBR from './localizacao/ptBR.json'
 import Kalend, { CalendarView } from 'kalend'
 import 'kalend/dist/styles/index.css';
-import useListaDeEventos from '../../hooks/useListaDeEventos';
+import useListaDeEventos from '../../state/hooks/useListaDeEventos';
 
 interface IKalendEvento {
   id?: number

@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil";
-import { listaDeEventosState } from "../state/atom";
+import { listaDeEventosState } from "../atom";
 
 const useListaDeEventos = () => {
   const setListaEventos = useRecoilValue(listaDeEventosState);

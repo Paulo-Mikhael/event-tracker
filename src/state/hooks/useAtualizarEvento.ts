@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil"
-import { listaDeEventosState } from "../state/atom";
-import { IEvento } from "../interfaces/IEvento";
+import { listaDeEventosState } from "../atom";
+import { IEvento } from "../../interfaces/IEvento";
 
 const useAtualizarEvento = () => {
   const setListaEventos = useSetRecoilState<IEvento[]>(listaDeEventosState);
