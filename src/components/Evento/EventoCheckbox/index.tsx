@@ -17,8 +17,6 @@ const EventoCheckbox: React.FC<{ evento: IEvento }> = ({ evento }) => {
     eventoAtualizado.completo = !evento.completo
 
     atualizarEvento(eventoAtualizado);
-
-    console.log(eventoAtualizado);
   }
 
   return (<i className={estilos.join(' ')} onClick={() => alterarStatus()}></i>)
