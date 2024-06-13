@@ -11,8 +11,8 @@ const Filtro: React.FC = () => {
   const [situacao, setSituacao] = useState('Todas');
   const setFiltroEventos = useSetRecoilState<IFiltroDeEventos>(filtroDeEventos);
   
-  const submeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
-    evento.preventDefault()
+  const submeterForm = (evento?: React.FormEvent<HTMLFormElement>) => {
+    evento && evento.preventDefault()
     const filtro: IFiltroDeEventos = {}
 
     if (data){
@@ -33,6 +33,9 @@ const Filtro: React.FC = () => {
 
     setFiltroEventos(filtro);
   }
+  useEffect(() => {
+    submeterForm();
+  }, []);
 
   return (<form className={style.Filtro} onSubmit={submeterForm}>
     <h3 className={style.titulo}>Filtrar por data</h3>
@@ -43,14 +46,12 @@ const Filtro: React.FC = () => {
       onChange={evento => setData(evento.target.value)} 
       placeholder="Por data"
       value={data} />
-    <FormControl fullWidth sx={{ marginTop: '10px' }}>
-      <InputLabel id="demo-simple-select-label">Situação</InputLabel>
+    <FormControl sx={{ marginTop: 1, minWidth: 120 }} size="small" fullWidth>
       <Select
         value={situacao}
         onChange={(evt) => setSituacao(evt.target.value)}
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        variant='standard'
       >
         <MenuItem value='Todas'>Todas</MenuItem>
         <MenuItem value='Completas'>Completas</MenuItem>
