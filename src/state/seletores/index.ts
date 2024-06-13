@@ -21,13 +21,36 @@ export const filtraEventos = selector({
 });
 export const eventosAsync = selector({
   key: 'eventosAsync',
-  get: async () => {
-    const respostaHttp = await axios.get<IEvento[]>('http://localhost:3000/eventos')
-
-    return respostaHttp.data.map(evento => ({
-      ...evento,
-      inicio: new Date(evento.inicio),
-      fim: new Date(evento.fim)
-    }));
+  get: () => {
+    return [
+      {
+        "descricao": "Estudar React",
+        "inicio": new Date("2022-01-15T09:00"),
+        "fim": new Date("2022-01-15T13:00"),
+        "completo": false,
+        "id": 100
+      },
+      {
+        "descricao": "Estudar Recoil",
+        "inicio": new Date("2022-01-16T09:00"),
+        "fim": new Date("2022-01-16T11:00"),
+        "completo": false,
+        "id": 101
+      },
+      {
+        "descricao": "Estudar C#",
+        "inicio": new Date("2024-06-16T09:00"),
+        "fim": new Date("2024-06-16T11:00"),
+        "completo": false,
+        "id": 102
+      },
+      {
+        "descricao": "Estudar Angular",
+        "inicio": new Date("2024-06-13T09:00"),
+        "fim": new Date("2024-06-13T11:00"),
+        "completo": false,
+        "id": 103
+      }
+    ]
   }
 });
